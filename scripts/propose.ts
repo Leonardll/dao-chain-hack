@@ -17,7 +17,7 @@ export async function makeProposal(functionCall:string, args:number[], proposalD
         [encodedFunctionCall],
         proposalDescription,
     );
-    const proposeReceipt = proposeTx.wait(1);
+    const proposeReceipt = await proposeTx.wait(1);
 
     // jump time
     if (developmentChains.includes(network.name)) {
